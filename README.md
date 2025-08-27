@@ -1,4 +1,4 @@
-##Project Overview
+# Project Overview
 
 This repository contains Python code for analyzing electrolyzer performance data extracted from an Excel file (Book1.xlsx). The project calculates key efficiency metrics and fits electrochemical models, including:
 
