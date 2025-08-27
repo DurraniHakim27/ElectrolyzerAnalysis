@@ -14,17 +14,17 @@ ElectrolyzerAnalysis/
 ├── LICENSE                  # License for usage/sharing
 │
 ├── data/
-│   ├── raw/                 # Raw input data (e.g. Book1.xlsx)
-│   └── processed/           # Cleaned or intermediate datasets
+│   └── raw/                 # Raw input data (e.g. Book1.xlsx)
+│  
 │
 ├── src/                     # Main analysis scripts
-│   ├── calculate_efficiencies.py
+│   ├── combinedplotswithslider.py
 │   ├── plot_all_metrics.py
-│   └── tafel_fit.py
+│   └── tafelequation.py
 │
 ├── results/
-│   ├── plots/               # Generated PNG graphs
-│   └── data_outputs/        # Processed output CSVs/Excel files
+│   └── plots/               # Generated PNG graphs
+│  
 │
 ├── notebooks/               # (Optional) Jupyter notebooks for exploration
 ├── docs/                    # Extra documentation & references
@@ -63,11 +63,6 @@ All metrics are calculated and visualized using Python scripts. Plots are automa
 1. Place your raw Excel data file (`Book1.xlsx`) into `data/raw/`.
 2. Run the scripts from VS Code or the command line:
 
-**Calculate efficiencies:**
-
-```bash
-python src/src/calculate_efficiencies.py
-```
 
 **Generate plots (all metrics):**
 
@@ -75,10 +70,17 @@ python src/src/calculate_efficiencies.py
 python src/src/plot_all_metrics.py
 ```
 
+**Calculate efficiencies with slider:**
+
+```bash
+python src/src/combinedplotswithslider.py
+```
+
+
 **Tafel analysis:**
 
 ```bash
-python src/src/tafel_fit.py
+python src/src/tafelequation.py
 ```
 
 Output CSVs will be saved in `results/data_outputs/`, and PNG plots in `results/plots/`.
