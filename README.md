@@ -164,13 +164,7 @@ where:
 
 ![Tafel Equation Plot](results/plots/tafel_plot.png)
 
----
 
-## 🔮 Future Extensions
-
-* Add PLC/Modbus interface scripts under `plc/` for real-time data acquisition.
-* Support multiple experiment runs and batch processing.
-* Add `tests/` for automated unit testing of formulas.
 
 ---
 
