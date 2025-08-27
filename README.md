@@ -1,41 +1,186 @@
-# Project Overview
+# Electrolyzer Performance Analysis Project
 
-This repository contains Python code for analyzing electrolyzer performance data extracted from an Excel file (Book1.xlsx). The project calculates key efficiency metrics and fits electrochemical models, including:
+This repository contains **Python code and data analysis tools** for evaluating the performance of a water electrolyzer. The project uses experimental data (from Excel spreadsheets) to calculate key performance metrics, generate plots, and fit electrochemical models.
 
-Faradaic efficiency (η<sub>F</sub>) – efficiency of charge usage for desired product (H₂) generation.
+---
 
-Voltage efficiency (η<sub>V</sub>) – ratio of theoretical reversible voltage to actual cell voltage.
+## 📂 Repository Structure
 
-Cell (energy) efficiency (η<sub>cell</sub>) – fraction of electrical energy stored as chemical energy in H₂ (product of η<sub>F</sub> and η<sub>V</sub>
-en.wikipedia.org
-).
+```
+ElectrolyzerAnalysis/
+├── README.md                # Project overview (this file)
+├── requirements.txt         # Python dependencies
+├── .gitignore               # Ignore cache/temp files
+├── LICENSE                  # License for usage/sharing
+│
+├── data/
+│   ├── raw/                 # Raw input data (e.g. Book1.xlsx)
+│   └── processed/           # Cleaned or intermediate datasets
+│
+├── src/                     # Main analysis scripts
+│   ├── calculate_efficiencies.py
+│   ├── plot_all_metrics.py
+│   └── tafel_fit.py
+│
+├── results/
+│   ├── plots/               # Generated PNG graphs
+│   └── data_outputs/        # Processed output CSVs/Excel files
+│
+├── notebooks/               # (Optional) Jupyter notebooks for exploration
+├── docs/                    # Extra documentation & references
+└── plc/                     # Placeholder for PLC/Modbus code (future)
+```
 
-Overall energy efficiency (η<sub>energy</sub>) – ratio of hydrogen energy output to electrical energy input.
+---
 
-Tafel analysis – fits the Tafel equation to polarization data to extract kinetic parameters.
+## ⚡ Project Overview
 
-Each metric is computed and plotted by the provided scripts. The code reads the raw data, performs calculations, and generates plots in the results/ folder.
+The goal of this project is to analyze experimental data from an electrolyzer and calculate key performance metrics:
 
-Setup and Dependencies
+* **Faradaic efficiency (ηF)** – How effectively charge is used to produce hydrogen.
+* **Voltage efficiency (ηV)** – Ratio of reversible voltage (≈1.23 V) to actual cell voltage.
+* **Cell efficiency (ηcell)** – Product of ηF and ηV (energy conversion efficiency).
+* **Overall efficiency (ηenergy)** – Ratio of hydrogen energy output to electrical energy input.
+* **Tafel analysis** – Fits the Tafel equation to extract electrode kinetic parameters.
 
-Python Version: Use Python 3.7+.
+All metrics are calculated and visualized using Python scripts. Plots are automatically saved under `results/plots/`.
 
-Install dependencies: Run pip install -r requirements.txt in your virtual environment. Typical packages include:
+---
 
-pandas (data handling)
+## 🛠️ Setup and Usage
 
-numpy (numerical operations)
+### Requirements
 
-matplotlib or seaborn (plotting)
+* Python 3.8+ (tested in **Visual Studio Code**)
+* Install dependencies:
 
-scipy (for curve fitting, e.g. Tafel)
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-openpyxl or xlrd (Excel I/O)
+### Running the analysis
 
-Environment: It’s recommended to use a virtual environment (venv/conda) to manage packages. The requirements.txt file pins all necessary libraries.
+1. Place your raw Excel data file (`Book1.xlsx`) into `data/raw/`.
+2. Run the scripts from VS Code or the command line:
 
-Excel Data: Place the original data file (Book1.xlsx) in data/raw/. Do not modify this file; any cleaning should be done by scripts copying from it.
+**Calculate efficiencies:**
 
-Running the code: Each script can be executed from the command line or an IDE:
+```bash
+python src/calculate_efficiencies.py
+```
 
-Efficiencies calculation:
+**Generate plots (all metrics):**
+
+```bash
+python src/plot_all_metrics.py
+```
+
+**Tafel analysis:**
+
+```bash
+python src/tafel_fit.py
+```
+
+Output CSVs will be saved in `results/data_outputs/`, and PNG plots in `results/plots/`.
+
+---
+
+## 📊 Efficiency Calculations (Formulas)
+
+**Faradaic Efficiency (ηF):**
+
+$\eta_F = \frac{n_{H_2} \cdot 2F}{I t} \times 100\%$
+
+or equivalently:
+
+$\eta_F = \frac{V_{H2,exp}}{V_{H2,theo}}$
+
+**Voltage Efficiency (ηV):**
+
+$\eta_V = \frac{E_{rev}}{V_{cell}}$
+
+**Cell Efficiency (ηcell):**
+
+$\eta_{cell} = \eta_F \times \eta_V$
+
+**Overall Energy Efficiency (ηenergy):**
+
+$\eta_{energy} = \frac{H_{H_2} \cdot V_{H2,exp}}{U I t}$
+
+**Tafel Equation:**
+
+$\eta = A \log_{10}\left(\frac{i}{i_0}\right)$
+
+where:
+
+* *A* = Tafel slope
+* *i₀* = exchange current density
+
+---
+
+## 📈 Results and Plots
+
+### Power Level vs Current Density
+
+![Power vs Current Density](results/plots/power_vs_current_density.png)
+
+### Power Level vs Voltage Cell
+
+![Power vs Voltage Cell](results/plots/power_vs_voltage_cell.png)
+
+### Current Density vs Real Hydrogen Volume Flow
+
+![Current Density vs H2 Flow](results/plots/current_density_vs_h2_flow.png)
+
+### Voltage Cell vs Real Hydrogen Volume Flow
+
+![Voltage Cell vs H2 Flow](results/plots/voltage_cell_vs_h2_flow.png)
+
+### Voltage Cell vs Voltage Efficiency
+
+![Voltage Cell vs Voltage Efficiency](results/plots/voltage_cell_vs_voltage_eff.png)
+
+### Current Density vs Faradaic Efficiency
+
+![Current Density vs Faradaic Efficiency](results/plots/current_density_vs_faraday_eff.png)
+
+### Power Level vs Faradaic Efficiency
+
+![Power vs Faradaic Efficiency](results/plots/power_vs_faraday_eff.png)
+
+### Power Level vs Cell Efficiency
+
+![Power vs Cell Efficiency](results/plots/power_vs_cell_eff.png)
+
+### Power Level vs Voltage Efficiency
+
+![Power vs Voltage Efficiency](results/plots/power_vs_voltage_eff.png)
+
+### Power Level vs All Efficiencies Combined
+
+![Power vs All Efficiencies Combined](results/plots/power_vs_all_eff.png)
+
+### Tafel Equation Plot
+
+![Tafel Equation Plot](results/plots/tafel_plot.png)
+
+---
+
+## 🔮 Future Extensions
+
+* Add PLC/Modbus interface scripts under `plc/` for real-time data acquisition.
+* Support multiple experiment runs and batch processing.
+* Add `tests/` for automated unit testing of formulas.
+
+---
+
+## 📚 References
+
+* [Faraday efficiency – Wikipedia](https://en.wikipedia.org/wiki/Faraday_efficiency)
+* [Tafel Equation – Wikipedia](https://en.wikipedia.org/wiki/Tafel_equation)
+* [NREL Electrolysis Efficiency Report](https://docs.nrel.gov/docs/fy10osti/47302.pdf)
+* [Introduction to Electrolyzers – Fuel Cell Store](https://www.fuelcellstore.com/blog-section/introduction-to-electrolyzers)
+
+---
+
+🚀 With this setup, you can easily showcase your work on GitHub and LinkedIn, making it reproducible, professional, and extendable for future collaborators.
