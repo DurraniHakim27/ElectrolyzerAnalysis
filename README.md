@@ -26,9 +26,8 @@ ElectrolyzerAnalysis/
 │   └── plots/               # Generated PNG graphs
 │  
 │
-├── notebooks/               # (Optional) Jupyter notebooks for exploration
 ├── docs/                    # Extra documentation & references
-└── plc/                     # Placeholder for PLC/Modbus code (future)
+└── plc/                     # Placeholder for Main PLC logic
 ```
 
 ---
