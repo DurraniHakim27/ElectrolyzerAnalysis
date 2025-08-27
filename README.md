@@ -66,19 +66,19 @@ All metrics are calculated and visualized using Python scripts. Plots are automa
 **Calculate efficiencies:**
 
 ```bash
-python src/calculate_efficiencies.py
+python src/src/calculate_efficiencies.py
 ```
 
 **Generate plots (all metrics):**
 
 ```bash
-python src/plot_all_metrics.py
+python src/src/plot_all_metrics.py
 ```
 
 **Tafel analysis:**
 
 ```bash
-python src/tafel_fit.py
+python src/src/tafel_fit.py
 ```
 
 Output CSVs will be saved in `results/data_outputs/`, and PNG plots in `results/plots/`.
