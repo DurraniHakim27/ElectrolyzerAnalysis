@@ -123,7 +123,7 @@ where:
 
 ### Power Level vs Current Density
 
-![Power vs Current Density](results/plots/power_vs_current_density.png)
+![Power vs Current Density](results/plots/Power_Level_vs_Current_Density.png)
 
 ### Power Level vs Voltage Cell
 
