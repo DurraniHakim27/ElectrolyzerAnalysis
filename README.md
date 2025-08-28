@@ -127,43 +127,52 @@ where:
 
 ### Power Level vs Voltage Cell
 
-![Power vs Voltage Cell](results/plots/power_vs_voltage_cell.png)
+![Power vs Voltage Cell](results/plots/Power_Level_vs_Voltage_Cell.png)
 
 ### Current Density vs Real Hydrogen Volume Flow
 
-![Current Density vs H2 Flow](results/plots/current_density_vs_h2_flow.png)
+![Current Density vs H2 Flow](results/plots/Current_Density_vs_Real_Hydrogen_Volume_Flow.png)
 
 ### Voltage Cell vs Real Hydrogen Volume Flow
 
-![Voltage Cell vs H2 Flow](results/plots/voltage_cell_vs_h2_flow.png)
+![Voltage Cell vs H2 Flow](results/plots/Voltage_Cell_vs_Real_Hydrogen_Volume_Flow.png)
 
 ### Voltage Cell vs Voltage Efficiency
 
-![Voltage Cell vs Voltage Efficiency](results/plots/voltage_cell_vs_voltage_eff.png)
+![Voltage Cell vs Voltage Efficiency](results/plots/Voltage_Cell_vs_Voltage_Efficiency.png)
 
 ### Current Density vs Faradaic Efficiency
 
-![Current Density vs Faradaic Efficiency](results/plots/current_density_vs_faraday_eff.png)
+![Current Density vs Faradaic Efficiency](results/plots/Current_Density_vs_Faraday_Efficiency.png)
+
+### Power Level vs Real Hydrogen Volume Flow
+
+![Power vs Cell Efficiency](results/plots/Power_Level_vs_Real_Hydrogen_Volume_Flow.png)
 
 ### Power Level vs Faradaic Efficiency
 
-![Power vs Faradaic Efficiency](results/plots/power_vs_faraday_eff.png)
-
-### Power Level vs Cell Efficiency
-
-![Power vs Cell Efficiency](results/plots/power_vs_cell_eff.png)
+![Power vs Faradaic Efficiency](results/plots/Power_Level_vs_Faraday_Efficiency.png)
 
 ### Power Level vs Voltage Efficiency
 
-![Power vs Voltage Efficiency](results/plots/power_vs_voltage_eff.png)
+![Power vs Voltage Efficiency](results/plots/Power_Level_vs_Voltage_Efficiency.png)
+
+### Power Level vs Cell Efficiency
+
+![Power vs Cell Efficiency](results/plots/Power_Level_vs_Cell_Efficiency.png)
+
+
+### Power Level vs Overall Efficiency
+
+![Power vs Voltage Efficiency](results/plots/Power_Level_vs_Overall_Efficiency.png)
 
 ### Power Level vs All Efficiencies Combined
 
-![Power vs All Efficiencies Combined](results/plots/power_vs_all_eff.png)
+![Power vs All Efficiencies Combined](results/plots/All_efficiencies_with_slider.png)
 
 ### Tafel Equation Plot
 
-![Tafel Equation Plot](results/plots/tafel_plot.png)
+![Tafel Equation Plot](results/plots/Tafel.png)
 
 
 
