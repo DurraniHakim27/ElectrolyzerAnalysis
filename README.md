@@ -1,6 +1,6 @@
 # Electrolyzer Performance Analysis Project
 
-This repository contains **Python code and data analysis tools** for evaluating the performance of a water electrolyzer. The project uses experimental data (from Excel spreadsheets) to calculate key performance metrics, generate plots, and fit electrochemical models.
+This repository contains **Python code and data analysis tools** for evaluating the performance of a Proton Exchange Membrane (PEM) electrolyzer. The project uses experimental data (from Excel spreadsheets) to calculate key performance metrics, generate plots, and fit electrochemical models.
 
 ---
 
